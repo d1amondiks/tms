@@ -5,18 +5,10 @@ count_result=lambda x: (x*2 if x%2!=0 else x/2)
 count_plus_dec=lambda x:x if x>0 else 0
 
 def task_2_a (*args):
-    list_input=[]
-    for arg in args:
-        list_input.append(arg)
-    print(list(filter(lambda x: count_notevent(x)==True,list_input)))
-
+    print(list(filter(count_notevent ,args)))
 
 def task_2_b(*args):
-    list_input = []
-    for arg in args:
-        list_input.append(arg)
-    print(list(map(lambda x: count_result(x), list_input)))
-
+    print(list(map(count_result, args)))
 
 def task_2_d(*args):
     sum = Decimal(0)
