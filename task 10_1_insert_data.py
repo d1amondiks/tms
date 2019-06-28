@@ -2,7 +2,7 @@ from venv.tcl.task10_1 import Task3
 from venv.tcl.models_task10 import Shops, Departments, Items
 
 
-# drop table or all tables
+# drop table or all tables .
 Task3('first.db').drop_table(Items)
 Task3('first.db').drop_all_tables()
 # create tables
@@ -64,18 +64,9 @@ Task3('first.db').session.commit()
 Task3('first.db').session.query(Shops).all()
 Task3('first.db').session.query(Departments).all()
 Task3('first.db').session.query(Items).all()
-# Doesn't work such adding to table!!!!
-y = Items('spoon', 'good spoon', 25, 2)
-print (y.name, y.description)
-Task3('first.db').session.add(y)
-Task3('first.db').session.commit()
-# Questions
-# Ask Jura why it doesn't work while update_shop_descr works well !!!!!!
-Task3('first.db').session.query(Shops).filter(Shops.name == "Ikea").\
+#create session for making operations
+session = Task3('first.db').session
+session.query(Shops).filter(Shops.name == "Ikea").\
     update({Shops.name: "Ikea_new"})
-Task3('first.db').session.commit()
-# Ask Jura 1) when it is necessary to use join in SQLalchemy or
-#          relationships change it
-#          2) how to add in class new elements fast without
-#          reloading old functions
-#          3) how to use reload modules with from &&& import &&&
+session.commit()
+

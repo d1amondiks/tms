@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if title %}
+      <title> Kratko pro {{ title }} </title>
+      {% else %}
+      <title> Welcome to blog about Belarus regions </title>
+      {% endif %}
+    </head>
+    <body>
+        <div><a href="/index"> Home </a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

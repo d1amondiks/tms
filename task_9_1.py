@@ -72,6 +72,11 @@ def task_3(input_path):
         items WHERE items.department = departments.id
         AND departments.shop = shops.id AND items.description != ''""")
     print (curs.fetchall())
+    curs.execute("""SELECT DISTINCT shops.name FROM shops
+        INNER JOIN departments ON items.department = departments.id
+        INNER JOIN items ON departments.shop = shops.id WHERE 
+        items.description != ''""")
+    print (curs.fetchall())
 
 
 task_3("first.db")

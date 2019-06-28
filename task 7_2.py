@@ -1,6 +1,7 @@
 import json
 import openpyxl
 from docx import Document
+reload(Document)
 
 #open xls file and read values on first sheet
 excel_doc = openpyxl.load_workbook('task_7_2_3.xlsx')
